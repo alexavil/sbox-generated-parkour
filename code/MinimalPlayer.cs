@@ -1,4 +1,5 @@
 ﻿using Sandbox;
+using System;
 
 partial class Player : Sandbox.Player
 {
@@ -24,13 +25,6 @@ partial class Player : Sandbox.Player
 
 
 		base.Respawn();
+		ConsoleSystem.Run( "generate_map" );
 	}
-	public override void StartTouch( Entity other )
-	{
-		if ( GroundEntity != null )
-		{
-			ConsoleSystem.Run( "spawn_platform" );
-		}
-	}
-
 }

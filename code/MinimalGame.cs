@@ -28,7 +28,7 @@ namespace ParkourGame
 				var player = new Player();
 				client.Pawn = player;
 				player.Respawn();
-			Host.AssertServer();
+			
 		}
 
 		[ServerCmd("spawn_platform")]
@@ -37,7 +37,7 @@ namespace ParkourGame
 			Random rnd = new Random();
 			int x = rnd.Next( 50, 151 );
 			int y = rnd.Next( 50, 151 );
-			int z = rnd.Next( 10, 51 );
+			int z = rnd.Next( 0, 51 );
 			Prop platform = new Prop();
 			platform.SetModel( "./platform.vmdl" );
 			platform.AddCollisionLayer( CollisionLayer.Solid );
@@ -51,23 +51,36 @@ namespace ParkourGame
 			Log.Info( "touching" );
 		}
 
-
-		public override void BuildInput( InputBuilder inputBuilder )
+		[ServerCmd( "generate_map" )]
+		public static void GenerateMap()
 		{
-			
-			inputBuilder.ViewAngles += inputBuilder.AnalogLook;
-			inputBuilder.InputDirection += inputBuilder.AnalogMove;
-
-			if ( inputBuilder.Pressed(InputButton.Jump) )
+			int a = 50;
+			int b = 151;
+			int c = 0;
+			int d = 51;
+			for ( int i = 0; i < 1000; i++ )
 			{
-				ConsoleSystem.Run( "spawn_platform" );
+				a = a + 100;
+				b = b + 100;
+				c = c + 100;
+				d = d + 100;
+				Random rnd = new Random();
+				int x = rnd.Next( a, b );
+				int y = rnd.Next( a, b );
+				int z = rnd.Next( 0, 51 );
+				Prop platform = new Prop();
+				platform.SetModel( "./platform.vmdl" );
+				platform.AddCollisionLayer( CollisionLayer.Solid );
+				platform.CollisionGroup = CollisionGroup.Prop;
+				platform.Position = new Vector3( x, y, z );
+				platform.EnableTouch = true;
+				platform.EnableHitboxes = true;
+				platform.Spawn();
+				Log.Info( platform.Position );
+				platform.MoveType = MoveType.None;
+				Log.Info( "touching" );
 			}
 		}
-
-
-
-
-
 	}
 
 }
