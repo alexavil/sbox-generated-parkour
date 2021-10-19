@@ -32,7 +32,7 @@ namespace ParkourGame
 		}
 
 		[ServerCmd( "generate_map" )]
-		public static void GenerateMap()
+		public static void GenerateMap( float startx, float starty, float startz )
 		{
 			int a = 50;
 			int b = 151;
@@ -62,7 +62,7 @@ namespace ParkourGame
 				}
 				platform.AddCollisionLayer( CollisionLayer.Solid );
 				platform.CollisionGroup = CollisionGroup.Prop;
-				platform.Position = new Vector3( x, y, z );
+				platform.Position = new Vector3( startx, starty, startz ) + new Vector3( x, y, z );
 				platform.EnableTouch = true;
 				platform.EnableHitboxes = true;
 				platform.Name = "platform";
