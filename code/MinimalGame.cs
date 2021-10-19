@@ -65,11 +65,23 @@ namespace ParkourGame
 				platform.Position = new Vector3( x, y, z );
 				platform.EnableTouch = true;
 				platform.EnableHitboxes = true;
+				platform.Name = "platform";
 				platform.Spawn();
 				Log.Info( platform.Position );
 				platform.MoveType = MoveType.None;
 				Log.Info( "touching" );
 			}
+		}
+
+		[ServerCmd("reset_map")]
+		public static void ResetMap()
+		{
+			var allEnts = Prop.FindAllByName("platform");
+			foreach ( var ent in allEnts )
+			{
+				ent.Delete();
+			}
+
 		}
 	}
 
