@@ -18,7 +18,7 @@ namespace Sandbox
 
 		public override void OnTouchStart( Entity other )
 		{
-			ConsoleSystem.Run( "spawn_platform" );
+			ConsoleSystem.Run( "generate_map" );
 
 		}
 

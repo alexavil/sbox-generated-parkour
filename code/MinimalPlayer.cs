@@ -25,6 +25,5 @@ partial class Player : Sandbox.Player
 
 
 		base.Respawn();
-		ConsoleSystem.Run( "generate_map" );
-	}
+		}
 }

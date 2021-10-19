@@ -14,68 +14,6 @@
 ]
 
 //
-// Sandbox.ParkourPlatform
-//
-@PointClass base(BaseProperties_sbox_generated_parkour) model() = parkour_platform : "A prop that physically simulates as a single rigid body. It can be constrained to other physics objects using hinges or other constraints. It can also be configured to break when it takes enough damage. Note that the health of the object will be overridden by the health inside the model, to ensure consistent health game-wide. If the model used by the prop is configured to be used as a prop_dynamic (i.e. it should not be physically simulated) then it CANNOT be used as a prop_physics. Upon level load it will display a warning in the console and remove itself. Use a prop_dynamic instead."
-[
-	model(resource:vmdl) { report = true hide_when_solid = true }: "World Model" : "" : "The model this entity should use."
-	skin(materialgroup) { group = "Rendering" hide_when_solid = true } : "Skin" : "default" : "Some models have multiple versions of their textures, called skins." 
-	bodygroups(bodygroupchoices) { group = "Rendering" hide_when_solid = true } : "Body Groups" : "" : "Some models have multiple variations of certain items, such as characters having different hair styles, etc."
-	rendercolor(color255) { alpha = true } : "Color (R G B A)" : "255 255 255 255" : "The color tint of this entity."
-	collisiongroupoverride(choices) : "Collision Group Override" : -1 : "" =
-	[
-		-1 : "UNUSED"
-		0 : "COLLISION GROUP ALWAYS"
-		1 : "COLLISION GROUP NONPHYSICAL"
-		4 : "COLLISION GROUP DEFAULT"
-		5 : "COLLISION GROUP DEBRIS"
-		14 : "COLLISION GROUP WEAPON"
-	]
-	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
-
-	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
-
-	output OnDamaged(void) : "Fired when the entity gets damaged"
-]
-
-//
-// Sandbox.TriggerNext
-//
-@SolidClass base(BaseProperties_sbox_generated_parkour) 
-metadata
-{
-	auto_apply_material = "materials/tools/toolstrigger.vmat"
-}
-= parkour_trigger_next : "A simple trigger volume that fires once and then removes itself."
-[
-	startdisabled(boolean) : "Start Disabled" : 0 : "Should this entity start disabled?"
-	actvationtags(tags) : "Actvation Tags" :  : "Entities with these tags can activate this trigger."
-	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
-	spawnflags(flags) = [
-		1 : "Clients" : 1
-		2 : "Npcs" : 0
-		4 : "Pushables" : 0
-		8 : "Physics Objects" : 0
-		16 : "Allied Npcs" : 0
-		32 : "Client In Vehicle" : 0
-		64 : "Everything" : 0
-		512 : "Client Not In Vehicle" : 0
-		1024 : "Physics Debris" : 0
-	]
-
-	input Enable(void) : "Enables this trigger"
-	input Disable(void) : "Disables this trigger"
-	input Toggle(void) : "Toggles this trigger between enabled and disabled states"
-	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
-
-	output OnTrigger(void) : "Called once at least a single entity that passes filters is touching this trigger, just before this trigger getting deleted"
-	output OnStartTouch(void) : "Fired when an entity starts touching this trigger. The touching entity must pass this trigger's filters to cause this output to fire."
-	output OnEndTouch(void) : "Fired when an entity stops touching this trigger. Only entities that passed this trigger's filters will cause this output to fire."
-	output OnStartTouchAll(void) : "Fired when an entity starts touching this trigger while no other passing entities are touching it."
-	output OnEndTouchAll(void) : "Fired when all entities touching this trigger have stopped touching it."
-]
-
-//
 // Sandbox.TriggerStart
 //
 @SolidClass base(BaseProperties_sbox_generated_parkour) 
