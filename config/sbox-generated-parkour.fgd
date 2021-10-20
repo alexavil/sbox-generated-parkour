@@ -16,7 +16,7 @@
 //
 // Sandbox.TriggerFail
 //
-@SolidClass base(BaseProperties_sbox_generated_parkour) 
+@SolidClass base(BaseProperties_sbox_generated_parkour) tags( Trigger ) 
 metadata
 {
 	auto_apply_material = "materials/tools/toolstrigger.vmat"
@@ -53,7 +53,7 @@ metadata
 //
 // Sandbox.TriggerStart
 //
-@SolidClass base(BaseProperties_sbox_generated_parkour) 
+@SolidClass base(BaseProperties_sbox_generated_parkour) tags( Trigger ) 
 metadata
 {
 	auto_apply_material = "materials/tools/toolstrigger.vmat"

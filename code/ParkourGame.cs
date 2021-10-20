@@ -1,25 +1,14 @@
-﻿
-using MinimalExample;
-using Sandbox;
+﻿using Sandbox;
 using System;
 
 namespace ParkourGame
 {
 
-	public partial class MinimalGame : Sandbox.Game
+
+	public partial class ParkourGame : Sandbox.Game
 	{
-		public MinimalGame()
+		public ParkourGame()
 		{
-
-			if ( IsServer )
-			{
-				new MinimalHudEntity();
-			}
-
-			if ( IsClient )
-			{
-				new MinimalHudEntity();
-			}
 		}
 		public override void ClientJoined( Client client )
 		{
@@ -34,32 +23,22 @@ namespace ParkourGame
 		[ServerCmd( "generate_map" )]
 		public static void GenerateMap( float startx, float starty, float startz )
 		{
-			int a = 50;
-			int b = 151;
+			int a = 30;
+			int b = 251;
 			int c = 0;
 			int d = 51;
-			int rng;
 			for ( int i = 0; i < 1000; i++ )
 			{
-				a = a + 100;
+				a = a + 150;
 				b = b + 100;
 				c = c + 100;
 				d = d + 100;
 				Random rnd = new Random();
-				int x = rnd.Next( a, b );
-				int y = rnd.Next( a, b );
-				int z = rnd.Next( 0, 51 );
-				rng = rnd.Next( 1, 3 );
+				int x = a;
+				int y = rnd.Next( 50, 251 );
+				int z = rnd.Next( 10, 51 );
 				Prop platform = new Prop();
-				switch ( rng )
-				{
-					case 1:
-						platform.SetModel( "./platform.vmdl" );
-						break;
-					case 2:
-						platform.SetModel( "./platform_small.vmdl" );
-						break;
-				}
+				platform.SetModel( "./platform_small.vmdl" );
 				platform.AddCollisionLayer( CollisionLayer.Solid );
 				platform.CollisionGroup = CollisionGroup.Prop;
 				platform.Position = new Vector3( startx, starty, startz ) + new Vector3( x, y, z );
@@ -67,9 +46,8 @@ namespace ParkourGame
 				platform.EnableHitboxes = true;
 				platform.Name = "platform";
 				platform.Spawn();
-				Log.Info( platform.Position );
+				Log.Info( "Spawned platform at " + platform.Position );
 				platform.MoveType = MoveType.None;
-				Log.Info( "touching" );
 			}
 		}
 

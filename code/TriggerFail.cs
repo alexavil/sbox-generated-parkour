@@ -1,4 +1,6 @@
 using System.Threading.Tasks;
+using Sandbox.UI;
+using Sandbox.UI.Construct;
 
 namespace Sandbox
 {
@@ -19,8 +21,15 @@ namespace Sandbox
 		public override void OnTouchStart( Entity other )
 		{
 			ConsoleSystem.Run( "reset_map" );
-			other.TakeDamage( DamageInfo.Generic(1000000) );
 
+			var Targetent = Entity.FindByName( "spawn" );
+
+			if ( Targetent != null )
+			{
+				other.Transform = Targetent.Transform;
+				other.Position = Targetent.Position;
+
+			}
 		}
 
 		/// <summary>
