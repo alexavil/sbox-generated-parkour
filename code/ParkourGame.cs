@@ -9,6 +9,7 @@ namespace ParkourGame
 	{
 		public ParkourGame()
 		{
+			new ParkourHudEntity();
 		}
 		public override void ClientJoined( Client client )
 		{
@@ -17,7 +18,6 @@ namespace ParkourGame
 				var player = new Player();
 				client.Pawn = player;
 				player.Respawn();
-			
 		}
 		public override void DoPlayerDevCam( Client player )
 		{
@@ -56,6 +56,7 @@ namespace ParkourGame
 				platform.MoveType = MoveType.None;
 			}
 		}
+
 
 		[ServerCmd("reset_map")]
 		public static void ResetMap()
