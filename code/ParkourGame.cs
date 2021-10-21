@@ -19,6 +19,12 @@ namespace ParkourGame
 				player.Respawn();
 			
 		}
+		public override void DoPlayerDevCam( Client player )
+		{
+		}
+		public override void DoPlayerNoclip( Client player )
+		{
+		}
 
 		[ServerCmd( "generate_map" )]
 		public static void GenerateMap( float startx, float starty, float startz )
