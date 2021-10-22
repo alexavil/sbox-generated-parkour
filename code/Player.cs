@@ -26,4 +26,10 @@ partial class Player : Sandbox.Player
 
 		base.Respawn();
 		}
+
+	public override void Simulate( Client cl )
+	{
+		base.Simulate( cl );
+		TickPlayerUse();
+	}
 }
