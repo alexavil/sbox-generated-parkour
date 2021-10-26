@@ -44,7 +44,7 @@ namespace ParkourGame
 				int y = rnd.Next( 50, 251 );
 				int z = rnd.Next( 10, 51 );
 				Prop platform = new Prop();
-				platform.SetModel( "./platform_small.vmdl" );
+				platform.SetModel( "./models/platform_small.vmdl" );
 				platform.AddCollisionLayer( CollisionLayer.Solid );
 				platform.CollisionGroup = CollisionGroup.Prop;
 				platform.Position = new Vector3( startx, starty, startz ) + new Vector3( x, y, z );
