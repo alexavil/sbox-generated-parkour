@@ -27,9 +27,17 @@ partial class Player : Sandbox.Player
 		base.Respawn();
 		}
 
+
 	public override void Simulate( Client cl )
 	{
 		base.Simulate( cl );
 		TickPlayerUse();
+	}
+
+	public override void Touch( Entity other )
+	{
+		base.Touch( other );
+		Log.Info( "touching" );
+		FileSystem.Data.WriteAllText( "./jumps.txt", "0" );
 	}
 }

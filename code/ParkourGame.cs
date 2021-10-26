@@ -54,6 +54,7 @@ namespace ParkourGame
 				platform.Spawn();
 				Log.Info( "Spawned platform at " + platform.Position );
 				platform.MoveType = MoveType.None;
+				FileSystem.Data.WriteAllText( "./jumps.txt", "0" );
 			}
 		}
 
@@ -65,6 +66,17 @@ namespace ParkourGame
 			foreach ( var ent in allEnts )
 			{
 				ent.Delete();
+			}
+
+		}
+		public override void BuildInput( InputBuilder input )
+		{
+			base.BuildInput( input );
+			if ( input.Pressed(InputButton.Jump) )
+			{
+				int jumps = FileSystem.Data.ReadAllText( "./jumps.txt" ).ToInt();
+				int newjumps = jumps + 1;
+				FileSystem.Data.WriteAllText( "./jumps.txt", newjumps.ToString() );
 			}
 
 		}

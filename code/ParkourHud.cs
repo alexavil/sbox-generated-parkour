@@ -12,11 +12,14 @@ namespace ParkourGame
 	{
 		public ParkourHudEntity()
 		{
-			if ( IsClient )
+			if (IsClient)
 			{
-				RootPanel.SetTemplate( "./score.html" );
+				RootPanel.StyleSheet.Load( "./score.scss" );
+				RootPanel.AllowChildSelection = true;
+				RootPanel.AddChild<Score>();
 			}
 		}
+
 	}
 
 }
