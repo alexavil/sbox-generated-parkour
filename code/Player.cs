@@ -37,7 +37,6 @@ partial class Player : Sandbox.Player
 	public override void Touch( Entity other )
 	{
 		base.Touch( other );
-		Log.Info( "touching" );
 		FileSystem.Data.WriteAllText( "./jumps.txt", "0" );
 	}
 }

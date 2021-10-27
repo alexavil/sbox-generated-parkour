@@ -33,7 +33,7 @@ namespace ParkourGame
 			int b = 251;
 			int c = 0;
 			int d = 51;
-			for ( int i = 0; i < 1000; i++ )
+			for ( int i = 0; i < 2000; i++ )
 			{
 				a = a + 150;
 				b = b + 100;
@@ -41,7 +41,7 @@ namespace ParkourGame
 				d = d + 100;
 				Random rnd = new Random();
 				int x = a;
-				int y = rnd.Next( 50, 251 );
+				int y = rnd.Next( 0, 201 );
 				int z = rnd.Next( 10, 51 );
 				Prop platform = new Prop();
 				platform.SetModel( "./models/platform_small.vmdl" );
