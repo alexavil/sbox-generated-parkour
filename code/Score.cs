@@ -19,6 +19,7 @@ namespace ParkourGame
 			if ( player == null ) return;
 
 			Label.Text = "Jumps: " + FileSystem.Data.ReadAllText( "./jumps.txt" );
+			Label.Text = "Jumps: " + FileSystem.Data.ReadAllText( "./jumps.txt" );
 		}
 	}
 }

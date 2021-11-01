@@ -7,10 +7,13 @@ namespace ParkourGame
 
 	public partial class ParkourGame : Sandbox.Game
 	{
+		public static WIPHudEntity alert;
 		public ParkourGame()
 		{
 			new ParkourHudEntity();
+			alert = new WIPHudEntity();
 		}
+
 		public override void ClientJoined( Client client )
 		{
 			base.ClientJoined( client );
@@ -66,9 +69,11 @@ namespace ParkourGame
 			foreach ( var ent in allEnts )
 			{
 				ent.Delete();
+
 			}
 
 		}
+
 		public override void BuildInput( InputBuilder input )
 		{
 			base.BuildInput( input );
