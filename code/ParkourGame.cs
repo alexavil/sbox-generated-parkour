@@ -12,6 +12,7 @@ namespace ParkourGame
 		{
 			new ParkourHudEntity();
 			alert = new WIPHudEntity();
+			FileSystem.Data.WriteAllText( "./attempts.txt", "0" );
 		}
 
 		public override void ClientJoined( Client client )
@@ -65,6 +66,9 @@ namespace ParkourGame
 		[ServerCmd("reset_map")]
 		public static void ResetMap()
 		{
+			int attempts = FileSystem.Data.ReadAllText( "./attempts.txt" ).ToInt();
+			int newattempts = attempts + 1;
+			FileSystem.Data.WriteAllText( "./attempts.txt", newattempts.ToString() );
 			var allEnts = Prop.FindAllByName("platform");
 			foreach ( var ent in allEnts )
 			{
