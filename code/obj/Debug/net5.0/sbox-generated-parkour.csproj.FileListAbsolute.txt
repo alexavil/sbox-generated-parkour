@@ -1,0 +1,14 @@
+C:\Program Files (x86)\Steam\steamapps\common\sbox\Addons\sbox-generated-parkour\.intermediate\net5.0\sbox-generated-parkour.deps.json
+C:\Program Files (x86)\Steam\steamapps\common\sbox\Addons\sbox-generated-parkour\.intermediate\net5.0\sbox-generated-parkour.dll
+C:\Program Files (x86)\Steam\steamapps\common\sbox\Addons\sbox-generated-parkour\.intermediate\net5.0\ref\sbox-generated-parkour.dll
+C:\Program Files (x86)\Steam\steamapps\common\sbox\Addons\sbox-generated-parkour\.intermediate\net5.0\sbox-generated-parkour.pdb
+C:\Program Files (x86)\Steam\steamapps\common\sbox\Addons\sbox-generated-parkour\.intermediate\net5.0\sbox-generated-parkour.xml
+C:\Program Files (x86)\Steam\steamapps\common\sbox\Addons\sbox-generated-parkour\code\obj\Debug\net5.0\sbox-generated-parkour.csproj.AssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\sbox\Addons\sbox-generated-parkour\code\obj\Debug\net5.0\sbox-generated-parkour.GeneratedMSBuildEditorConfig.editorconfig
+C:\Program Files (x86)\Steam\steamapps\common\sbox\Addons\sbox-generated-parkour\code\obj\Debug\net5.0\sbox-generated-parkour.AssemblyInfoInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\sbox\Addons\sbox-generated-parkour\code\obj\Debug\net5.0\sbox-generated-parkour.AssemblyInfo.cs
+C:\Program Files (x86)\Steam\steamapps\common\sbox\Addons\sbox-generated-parkour\code\obj\Debug\net5.0\sbox-generated-parkour.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\sbox\Addons\sbox-generated-parkour\code\obj\Debug\net5.0\sbox-generated-parkour.csproj.CopyComplete
+C:\Program Files (x86)\Steam\steamapps\common\sbox\Addons\sbox-generated-parkour\code\obj\Debug\net5.0\sbox-generated-parkour.dll
+C:\Program Files (x86)\Steam\steamapps\common\sbox\Addons\sbox-generated-parkour\code\obj\Debug\net5.0\ref\sbox-generated-parkour.dll
+C:\Program Files (x86)\Steam\steamapps\common\sbox\Addons\sbox-generated-parkour\code\obj\Debug\net5.0\sbox-generated-parkour.pdb
