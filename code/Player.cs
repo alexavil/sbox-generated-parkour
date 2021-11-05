@@ -47,8 +47,10 @@ partial class Player : Sandbox.Player
 		{
 			if ( GroundEntity == null ) return;
 			int jumps = FileSystem.Data.ReadAllText( "./jumps.txt" ).ToInt();
+			int highscore = FileSystem.Data.ReadAllText( "./highscore.txt" ).ToInt();
 			int newjumps = jumps + 1;
 			FileSystem.Data.WriteAllText( "./jumps.txt", newjumps.ToString() );
+			if (newjumps > highscore) FileSystem.Data.WriteAllText( "./highscore.txt", newjumps.ToString() );
 		}
 
 	}
