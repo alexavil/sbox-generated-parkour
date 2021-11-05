@@ -78,6 +78,17 @@ namespace ParkourGame
 
 		}
 
+		public override void BuildInput( InputBuilder input )
+		{
+			base.BuildInput( input );
+			if ( input.Pressed(InputButton.Jump) )
+			{
+				int jumps = FileSystem.Data.ReadAllText( "./jumps.txt" ).ToInt();
+				int newjumps = jumps + 1;
+				FileSystem.Data.WriteAllText( "./jumps.txt", newjumps.ToString() );
+			}
+
+		}
 	}
 
 }

@@ -39,17 +39,4 @@ partial class Player : Sandbox.Player
 		base.Touch( other );
 		FileSystem.Data.WriteAllText( "./jumps.txt", "0" );
 	}
-
-	public override void BuildInput( InputBuilder input )
-	{
-		base.BuildInput( input );
-		if ( input.Pressed( InputButton.Jump ) )
-		{
-			if ( GroundEntity == null ) return;
-			int jumps = FileSystem.Data.ReadAllText( "./jumps.txt" ).ToInt();
-			int newjumps = jumps + 1;
-			FileSystem.Data.WriteAllText( "./jumps.txt", newjumps.ToString() );
-		}
-
-	}
 }
