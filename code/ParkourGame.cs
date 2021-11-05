@@ -13,7 +13,6 @@ namespace ParkourGame
 			new ParkourHudEntity();
 			alert = new WIPHudEntity();
 			FileSystem.Data.WriteAllText( "./attempts.txt", "0" );
-			FileSystem.Data.WriteAllText( "./highscore.txt", FileSystem.Data.ReadAllText( "./highscore.txt" ).ToString() );
 		}
 
 		public override void ClientJoined( Client client )
