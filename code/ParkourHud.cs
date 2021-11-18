@@ -14,7 +14,7 @@ namespace ParkourGame
 		{
 			if (IsClient)
 			{
-				RootPanel.StyleSheet.Load( "./score.scss" );
+				RootPanel.StyleSheet.Load( "./UI/score.scss" );
 				RootPanel.AllowChildSelection = true;
 				RootPanel.AddChild<Score>();
 			}

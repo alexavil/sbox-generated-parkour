@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 namespace ParkourGame
 {
 
-	public partial class WIPHudEntity : Sandbox.HudEntity<RootPanel>
+	public partial class WinHud : Sandbox.HudEntity<RootPanel>
 	{
-		public WIPHudEntity()
+		public WinHud()
 		{
 			if (IsClient)
 			{
 				RootPanel.AllowChildSelection = true;
-				var alert = RootPanel.AddChild<AlertPopUp>();
+				var alert = RootPanel.AddChild<LoopCompletePopUp>();
 				delete();
 				async Task<string> delete() {
 					await Task.DelaySeconds( 5 );
@@ -24,7 +24,6 @@ namespace ParkourGame
 					RootPanel.StyleSheet.Load( "./UI/score.scss" );
 					return "true";
 				}
-
 
 			}
 		}

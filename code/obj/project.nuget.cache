@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "31/1YXP+TBb4B+5+Nl7tgIjVxUlt77UskpLLbJ4WPD0zlC9mJmZPR9mya1LeKt/+aj4IN8vcZUlXKNkBIArA8g==",
+  "dgSpecHash": "tKVHWWrHkpfsQlL6IXa6AQhCrI48XO1MStUnjAeI3QModDqZWRJRJ2Slf92m2+s+Reyf5f06wjR3lchR4gaKmg==",
   "success": true,
-  "projectFilePath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\Addons\\sbox-generated-parkour\\code\\sbox-generated-parkour.csproj",
+  "projectFilePath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\sbox-generated-parkour\\code\\sbox-generated-parkour.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
