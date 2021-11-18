@@ -103,6 +103,16 @@ namespace ParkourGame
 			ConsoleSystem.Run( "kill" );
 		}
 
+		public override void DoPlayerDevCam( Client player )
+		{
+		
+		}
+
+		public override void DoPlayerNoclip( Client player )
+		{
+			
+		}
+
 	}
 
 }
