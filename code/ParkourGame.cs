@@ -7,12 +7,10 @@ namespace ParkourGame
 
 	public partial class ParkourGame : Sandbox.Game
 	{
-		public static WIPHudEntity alert;
 
 		public ParkourGame()
 		{
 			new ParkourHudEntity();
-			alert = new WIPHudEntity();
 
 			FileSystem.Data.WriteAllText( "./completed_easy.txt", FileSystem.Data.ReadAllText( "./completed_easy.txt" ) );
 			FileSystem.Data.WriteAllText( "./completed_normal.txt", FileSystem.Data.ReadAllText( "./completed_normal.txt" ) );
