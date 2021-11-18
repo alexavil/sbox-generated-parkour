@@ -3,7 +3,6 @@ using System;
 
 partial class Player : Sandbox.Player
 {
-
 	public override void Respawn()
 	{
 
@@ -47,8 +46,10 @@ partial class Player : Sandbox.Player
 		if ( input.Pressed( InputButton.Jump ) )
 		{
 			if ( GroundEntity == null ) return;
+			int highscore = FileSystem.Data.ReadAllText( "./highscore.txt" ).ToInt();
 			int jumps = FileSystem.Data.ReadAllText( "./jumps.txt" ).ToInt();
 			int newjumps = jumps + 1;
+			if (newjumps > highscore) FileSystem.Data.WriteAllText( "./highscore.txt", newjumps.ToString() );
 			FileSystem.Data.WriteAllText( "./jumps.txt", newjumps.ToString() );
 		}
 

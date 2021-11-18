@@ -18,21 +18,7 @@ namespace ParkourGame
 			var player = Local.Pawn;
 			if ( player == null ) return;
 
-
-			if ( Input.Down( InputButton.Score ) )
-			{
-				Label.Text = "";
-				SetTemplate( "./UI/menu.html" );
-			}
-			else
-			{
-				SetTemplate( "" );
-				string diff = FileSystem.Data.ReadAllText( "./difficulty.txt" );
-
-				Label.Text = "Loops Completed: " + FileSystem.Data.ReadAllText( "./completed_" + diff + ".txt" ) + "\nJumps: " + FileSystem.Data.ReadAllText( "./jumps.txt" ) + "\nDifficulty: " + diff;
-			}
-
-			
+			Label.Text = "High Score: " + FileSystem.Data.ReadAllText( "./highscore.txt" ) + "\nJumps: " + FileSystem.Data.ReadAllText( "./jumps.txt" ) + "\nAttempts: " + FileSystem.Data.ReadAllText( "./attempts.txt" );
 		}
 	}
 }

@@ -21,11 +21,11 @@ namespace ParkourGame
 				async Task<string> delete() {
 					await Task.DelaySeconds( 5 );
 					alert.Delete();
-					RootPanel.StyleSheet.Load( "./UI/score.scss" );
+					RootPanel.StyleSheet.Load("./score.scss");
 					return "true";
 				}
-
-
+				
+				
 			}
 		}
 
